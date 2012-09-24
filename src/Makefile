@@ -2,13 +2,11 @@ BUILD = ../build
 CPP = g++
 CPPFLAGS = -Wall -Wextra
 
-main: RawArray.o
-	$(CPP) $(CPPFLAGS) -o $(BUILD)/main RawArray.o
+test: AQueue/Queue.o AQueue/Queue.cpp
+	$(CPP) $(CPPFLAGS) -o test AQueue/Queue.cpp AQueue/Queue.o
 
-RawArray.o: RawArray.h RawArray.cpp
-	$(CPP) $(CPPFLAGS) -c RawArray.cpp
+Queue.o: AQueue/Queue.h AQueue/Queue.cpp
+	$(CPP) $(CPPFLAGS) -c AQueue/Queue.cpp
 
 clean:
 	rm -f *.o
-	rm -f *~
-	rm -f $(BUILD)/main
