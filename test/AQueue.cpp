@@ -69,7 +69,7 @@ TEST(AQueueTest, Resize) {
 
 TEST(AQueueTest, DownSize) {
 	Queue* q=new Queue(4);
-	q->enqueue(2);
+	q->enqueue(12);
 
 	EXPECT_EQ(1, q->size());
 	delete q;
