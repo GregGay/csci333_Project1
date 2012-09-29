@@ -2,11 +2,16 @@ BUILD = ../build
 CPP = g++
 CPPFLAGS = -Wall -Wextra
 
-test: AQueue/Queue.o AQueue/Queue.cpp
-	$(CPP) $(CPPFLAGS) -o test AQueue/Queue.cpp AQueue/Queue.o
+everything: AQueue LQueue LLQueue
 
-Queue.o: AQueue/Queue.h AQueue/Queue.cpp
-	$(CPP) $(CPPFLAGS) -c AQueue/Queue.cpp
+AQueue: AQueue/Queue.cpp AQueue/Queue.o
+	cd AQueue; $(MAKE)
+
+LQueue: LQueue/Queue.cpp LQueue/Queue.o
+	cd LQueue; $(MAKE)
+
+LLQueue: LLQueue/Queue.cpp LLQueue/Queue.o
+	cd LLQueue; $(MAKE)
 
 clean:
 	rm -f *.o
