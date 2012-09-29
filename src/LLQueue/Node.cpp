@@ -1,7 +1,7 @@
 #include "Node.h"
 
 Node::Node(int val) {
-	value=0;
+	value=val;
 	next=0;
 }
 
