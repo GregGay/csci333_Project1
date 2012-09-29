@@ -3,7 +3,7 @@ CPP = g++
 CPPFLAGS = -Wall -Wextra
 
 main: queue_tester.cpp Queue.o Node.o
-	$(CPP) $(CPPFLAGS) -o $(BUILD)/main queue_tester.cpp Queue.o Node.o
+	$(CPP) $(CPPFLAGS) -o $(BUILD)/LLQueue queue_tester.cpp Queue.o Node.o
 
 Queue.o: Queue.h Queue.cpp
 	$(CPP) $(CPPFLAGS) -c Queue.cpp
