@@ -7,7 +7,7 @@ using std::endl;
 int main() {
 	Queue* queue=new Queue();
 	queue->enqueue(5);
-	queue->enqueue(10);
+	queue->enqueue(12);
 	queue->enqueue(15);
 
 	cout << queue->dequeue() << endl;
