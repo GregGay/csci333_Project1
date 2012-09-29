@@ -8,11 +8,11 @@ int main() {
 	Queue* queue=new Queue();
 	start = clock();
 	
-	for (long i=0; i<9999999; ++i) {
+	for (long i=0; i<9999999; i++) {
 		queue->enqueue(i);
 	}
 
-	for (long i=0; i<9999999; ++i) {
+	for (long i=0; i<9999999; i++) {
 		queue->dequeue();
 	}
 
