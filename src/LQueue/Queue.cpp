@@ -3,39 +3,23 @@
 #include <iostream>
 
 Queue::Queue() {
-	front=0;
-	back=0;
-	numElements=0;
-}
 
-Queue::~Queue() {
-	Node* temp;
-	for (int i=1; i<numElements; ++i) {
-		temp=front;
-		front=temp->getNext();
-		delete temp;
-	}	
 }
 
 void Queue::enqueue(int value) {
-	Node* temp=new Node(value);
-	temp->setNext(front);
-	front=temp;
-	numElements++;
+	LQueue.push_back(value);
 }
 
 int Queue::dequeue() {
-	Node* temp=back;
-	int result=temp->getValue();
-	back=temp->getNext();
-	delete temp;
+	int result = LQueue.front();
+	LQueue.pop_front();
 	return result;
 }
 
 bool Queue::isEmpty(){
-	return true;
+	return LQueue.empty();
 }
 
 int Queue::size() {
-	return numElements;
+	return LQueue.size();
 }
