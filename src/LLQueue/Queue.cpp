@@ -8,28 +8,36 @@ Queue::Queue() {
 }
 
 Queue::~Queue() {
-	for (int i=1; i<numElements; ++i) {
+	while (!isEmpty()) {
 		dequeue();
 	}
 }
 
 void Queue::enqueue(int value) {
 	Node* temp=new Node(value);
-	temp->setNext(front);
-	front=temp;
+	if (front == 0) { 
+		front = temp;
+		back = temp;
+	}
+	else {
+		back->setNext(temp);
+		back=temp;
+	}
 	numElements++;
 }
 
 int Queue::dequeue() {
-	Node* temp=back;
-	int result=temp->getValue();
-	back=temp->getNext();
+	Node* temp=front;
+	assert(front!=0);
+	int result=front->getValue();
+	front=temp->getNext();
 	delete temp;
+	numElements--;
 	return result;
 }
 
 bool Queue::isEmpty() {
-	return true;
+	return numElements==0;
 }
 
 int Queue::size() {
