@@ -49,12 +49,7 @@ int Queue::dequeue() {
 }
 
 bool Queue::isEmpty() {
-	if (front==0 || back==0) {
-		return true;
-	}
-	else {
-		return false;
-	}
+	return length==0;
 }
 
 int Queue::size() {
