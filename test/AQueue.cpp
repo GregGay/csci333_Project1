@@ -56,6 +56,25 @@ TEST(AQueueTest, Dequeue2) {
 	delete q;
 }
 
+TEST(AQueueTest, Resize) {
+	Queue* q=new Queue(2);
+	q->enqueue(1);
+	q->enqueue(2);
+	q->enqueue(3);
+	q->enqueue(4);
+
+	EXPECT_EQ(4, q->size());
+	delete q;
+}
+
+TEST(AQueueTest, DownSize) {
+	Queue* q=new Queue(4);
+	q->enqueue(2);
+
+	EXPECT_EQ(1, q->size());
+	delete q;
+}
+
 TEST(AQueueTest, isEmpty) {
 	Queue* q=new Queue();
 	
